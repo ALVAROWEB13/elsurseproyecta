@@ -68,36 +68,37 @@ const peliculas = [
   description="El Sur se Proyecta es una invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla."
 >
 
-  <!-- ==================== 1. HERO SECTION WITH EXACT MALOCA BACKGROUND ==================== -->
-  <section id="hero" class="relative min-h-[95vh] flex flex-col justify-between overflow-hidden bg-sur-cream">
+  <!-- ==================== 1. LARGER HERO SECTION (MIN-H-SCREEN) ==================== -->
+  <section id="hero" class="relative min-h-screen lg:min-h-[105vh] flex flex-col justify-between overflow-hidden bg-sur-cream">
     
-    <!-- Exact Maloca Background Image (hero-maloca.webp) -->
+    <!-- Hero Maloca Background Image -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/hero-maloca.webp"
         alt="Comunidad El Sur se Proyecta en la maloca"
         class="w-full h-full object-cover object-center"
       />
-      <!-- Top Cream Mask Gradient for Nav Legibility -->
-      <div class="absolute inset-0 bg-gradient-to-b from-sur-cream via-sur-cream/60 to-transparent h-80"></div>
-      <!-- Soft Light Cream Overlay -->
+      <!-- Top Cream Gradient Mask for Header Legibility -->
+      <div class="absolute inset-0 bg-gradient-to-b from-sur-cream via-sur-cream/60 to-transparent h-88"></div>
+      <!-- Soft Light Warm Overlay -->
       <div class="absolute inset-0 bg-sur-cream/15"></div>
     </div>
 
     <!-- Embedded Header Navigation -->
-    <header class="relative z-20 w-full pt-6">
+    <header class="relative z-20 w-full pt-8 pb-4">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
+        <!-- Small brand logo icon top left -->
         <a href="/" class="flex items-center gap-2">
-          <img src="/images/logo.svg" alt="El Sur se Proyecta" class="h-10 sm:h-12 w-auto object-contain opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto" />
+          <img src="/images/logo.svg" alt="El Sur se Proyecta" class="h-10 sm:h-12 w-auto object-contain" />
         </a>
 
-        <!-- Navigation Links -->
+        <!-- Navigation Links in Open Sans Bold -->
         <nav class="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               href={link.href}
-              class="font-sans font-bold text-sm text-sur-olive hover:text-sur-olive-dark transition-colors py-1 hover:underline underline-offset-4 decoration-2"
+              class="font-sans font-bold text-base text-sur-olive hover:text-sur-olive-dark transition-colors py-1 hover:underline underline-offset-4 decoration-2"
             >
               {link.name}
             </a>
@@ -106,7 +107,7 @@ const peliculas = [
 
         <!-- CTA Pill Button -->
         <div class="hidden md:flex">
-          <Button href="#catalogo" variant="sur-pill" size="md">
+          <Button href="#catalogo" variant="sur-pill" size="md" className="px-6 py-2.5 text-sm font-sans font-bold">
             Ver Catálogo
           </Button>
         </div>
@@ -124,7 +125,7 @@ const peliculas = [
         </button>
       </div>
 
-      <!-- Mobile Menu Dropdown -->
+      <!-- Mobile Dropdown -->
       <div id="hero-mobile-menu" class="hidden md:hidden bg-sur-cream/95 backdrop-blur-md px-6 py-4 mt-2 border-b border-sur-olive/10 space-y-3 shadow-lg">
         {navLinks.map((link) => (
           <a href={link.href} class="block font-sans font-bold text-base text-sur-olive">
@@ -137,32 +138,32 @@ const peliculas = [
       </div>
     </header>
 
-    <!-- Main Hero Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32 relative z-10 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <!-- Main Hero Content (Expanded Layout) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-36 relative z-10 w-full flex-grow flex items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center w-full">
         
-        <!-- Left: Official Big Logo SVG -->
+        <!-- Left: Larger Official Logo SVG -->
         <div class="lg:col-span-5 flex justify-start items-center">
           <img
             src="/images/logo.svg"
             alt="El Sur se Proyecta Logo"
-            class="w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[490px] h-auto object-contain filter drop-shadow-md select-none"
+            class="w-full max-w-[380px] sm:max-w-[480px] lg:max-w-[540px] h-auto object-contain filter drop-shadow-lg select-none transition-transform duration-300 hover:scale-[1.01]"
           />
         </div>
 
         <!-- Right: Headline, Description & CTA Button -->
-        <div class="lg:col-span-7 space-y-6 max-w-2xl">
-          <h1 class="font-sur-brand text-4xl sm:text-5xl lg:text-6xl text-sur-olive uppercase leading-[0.95] tracking-wide">
+        <div class="lg:col-span-7 space-y-7 max-w-2xl">
+          <h1 class="font-sur-brand text-5xl sm:text-6xl lg:text-7xl text-sur-olive uppercase leading-[0.95] tracking-wide">
             UNA MINGA DE CINE,<br class="hidden sm:inline" />
             TERRITORIO Y COMUNIDAD
           </h1>
 
-          <p class="font-sans font-normal text-base sm:text-lg text-sur-olive/90 leading-relaxed max-w-xl">
+          <p class="font-sans font-normal text-lg sm:text-xl text-sur-olive/95 leading-relaxed max-w-xl">
             El Sur se Proyecta es una Invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla.
           </p>
 
           <div class="pt-2">
-            <Button href="#catalogo" variant="sur-pill" size="lg" className="px-8 py-3.5 text-base font-sans font-bold">
+            <Button href="#catalogo" variant="sur-pill" size="lg" className="px-9 py-4 text-lg font-sans font-bold shadow-xl">
               Explorar Catálogo
             </Button>
           </div>
@@ -171,11 +172,11 @@ const peliculas = [
       </div>
     </div>
 
-    <!-- Bottom Wave Decorative SVG (olas-rio.svg) -->
-    <div class="relative z-20 w-full leading-none -mt-20 sm:-mt-28 pointer-events-none">
+    <!-- Clean Bottom Wave Decorative SVG (olas-rio.svg) without the projector emblem -->
+    <div class="relative z-20 w-full leading-none -mt-20 sm:-mt-32 pointer-events-none">
       <img
         src="/images/olas-rio.svg"
-        alt="Olas de río"
+        alt="Olas del río El Sur se Proyecta"
         class="w-full h-auto block object-cover"
       />
     </div>
@@ -183,7 +184,7 @@ const peliculas = [
   </section>
 
   <!-- ==================== 2. TERRITORIOS / MAPA SECTION (Cyan #00A3DA) ==================== -->
-  <section id="sedes" class="py-20 bg-sur-cyan text-white relative overflow-hidden">
+  <section id="sedes" class="py-24 bg-sur-cyan text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
@@ -192,7 +193,7 @@ const peliculas = [
           <img
             src="/images/Recurso 20.svg"
             alt="Mapa de Territorios El Sur se Proyecta"
-            class="w-full max-w-[500px] h-auto object-contain filter drop-shadow-xl"
+            class="w-full max-w-[520px] h-auto object-contain filter drop-shadow-xl"
             onerror="this.onerror=null; this.src='/images/Recurso 17.svg';"
           />
         </div>
@@ -285,7 +286,7 @@ const peliculas = [
     </div>
   </section>
 
-  <!-- ==================== 5. OLIVE GREEN SECTION (noches-cine.webp) ==================== -->
+  <!-- ==================== 5. OLIVE GREEN SECTION ==================== -->
   <section class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
     
     <div class="bg-sur-olive text-sur-cream p-10 sm:p-14 lg:p-16 flex flex-col justify-center space-y-6">
@@ -500,7 +501,7 @@ const peliculas = [
     </div>
   </section>
 
-  <!-- ==================== 11. BOTTOM BANNER / LOGO BANNER (Cyan #00A3DA) ==================== -->
+  <!-- ==================== 11. BOTTOM BANNER / LOGO BANNER (Cyan) ==================== -->
   <section class="bg-sur-cyan text-white py-16 text-center relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center space-y-4">
       <img
