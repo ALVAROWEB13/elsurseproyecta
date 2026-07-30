@@ -11,30 +11,32 @@ const navLinks: NavLink[] = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-sur-cream/90 backdrop-blur-md transition-all duration-300 border-b border-sur-olive/10">
+<header class="sticky top-0 z-50 bg-sur-cream/95 backdrop-blur-md transition-all duration-300 border-b border-sur-olive/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
-      <!-- Logo Branding in League Gothic -->
+      <!-- Official Logo SVG -->
       <a href="/" class="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-sur-olive rounded-lg p-1">
-        <span class="font-sur-brand text-3xl text-sur-olive tracking-wider group-hover:text-sur-olive-dark transition-colors uppercase leading-none">
-          El Sur se Proyecta
-        </span>
+        <img
+          src="/images/logo.svg"
+          alt="El Sur se Proyecta"
+          class="h-12 sm:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+        />
       </a>
 
       <!-- Navigation links in Open Sans Bold -->
-      <nav class="hidden md:flex items-center gap-7" aria-label="Navegación principal">
+      <nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
         {navLinks.map((link) => (
           <a
             href={link.href}
-            class="font-sans font-bold text-sm text-sur-olive hover:text-sur-olive-dark transition-colors relative py-1 hover:underline underline-offset-4 decoration-2"
+            class="font-sans font-bold text-sm sm:text-base text-sur-olive hover:text-sur-olive-dark transition-colors relative py-1 hover:underline underline-offset-4 decoration-2"
           >
             {link.name}
           </a>
         ))}
       </nav>
 
-      <!-- CTA Button -->
+      <!-- CTA Pill Button -->
       <div class="hidden md:flex items-center">
         <Button href="#catalogo" variant="sur-pill" size="md">
           Ver Catálogo
@@ -50,10 +52,10 @@ const navLinks: NavLink[] = [
         aria-expanded="false"
         aria-label="Abrir menú de navegación"
       >
-        <svg id="menu-icon-open" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="menu-icon-open" class="w-7 h-7 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
