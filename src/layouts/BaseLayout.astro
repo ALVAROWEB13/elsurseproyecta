@@ -1,0 +1,71 @@
+---
+import type { SEOProps } from '@types';
+import Header from '@components/common/Header.astro';
+import Footer from '@components/common/Footer.astro';
+import '@styles/global.css';
+
+interface Props extends SEOProps {
+  lang?: string;
+}
+
+const {
+  title = 'El Sur se Proyecta | Una Minga de Cine, Territorio y Comunidad',
+  description = 'El Sur se Proyecta es una invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla.',
+  image = '/images/hero-bg.jpg',
+  canonicalURL = Astro.url,
+  ogType = 'website',
+  noindex = false,
+  lang = 'es',
+} = Astro.props;
+
+const siteTitle = title.includes('El Sur se Proyecta') ? title : `${title} | El Sur se Proyecta`;
+const canonical = new URL(canonicalURL, Astro.site);
+const socialImageURL = new URL(image, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Primary Meta Tags -->
+    <title>{siteTitle}</title>
+    <meta name="title" content={siteTitle} />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={siteTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+
+  <body class="bg-sur-cream text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-sur-olive/20 selection:text-sur-olive-dark">
+    <Header />
+    
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

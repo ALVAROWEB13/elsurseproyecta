@@ -1,0 +1,56 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cn } from '@utils/cn';
+
+interface Props extends HTMLAttributes<'button'> {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'sur-pill';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  className?: string;
+  isExternal?: boolean;
+}
+
+const {
+  variant = 'sur-pill',
+  size = 'md',
+  href,
+  className,
+  isExternal,
+  ...rest
+} = Astro.props;
+
+const baseStyles = 'inline-flex items-center justify-center font-bold tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sur-olive focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]';
+
+const variants = {
+  'sur-pill': 'bg-sur-green hover:bg-sur-green-hover text-white rounded-full shadow-md shadow-sur-green/20 hover:shadow-lg',
+  primary: 'bg-sur-olive hover:bg-sur-olive-dark text-white rounded-full shadow-md',
+  secondary: 'bg-sur-cream-light hover:bg-white text-sur-olive border border-sur-olive/30 rounded-full',
+  outline: 'bg-transparent border-2 border-sur-olive text-sur-olive hover:bg-sur-olive hover:text-white rounded-full',
+  ghost: 'bg-transparent hover:bg-sur-olive/10 text-sur-olive rounded-xl',
+};
+
+const sizes = {
+  sm: 'px-4 py-1.5 text-xs gap-1.5',
+  md: 'px-6 py-2.5 text-sm gap-2',
+  lg: 'px-8 py-3.5 text-base gap-2.5',
+};
+
+const classes = cn(baseStyles, variants[variant], sizes[size], className);
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={classes}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button class={classes} {...rest}>
+      <slot />
+    </button>
+  )
+}

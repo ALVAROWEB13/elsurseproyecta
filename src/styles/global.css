@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-cream: #F5E9D8;
+    --sur-olive: #4A6900;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-cream);
+    color: #1c2605;
+  }
+
+  body {
+    @apply bg-sur-cream text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-sur-olive/20 selection:text-sur-olive-dark;
+  }
+}
+
+@layer utilities {
+  /* Textura y gradientes para El Sur se Proyecta */
+  .font-sur-brand {
+    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .text-sur-olive {
+    color: #4A6900;
+  }
+
+  .bg-sur-pill {
+    background-color: #21670C;
+    transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out;
+  }
+  .bg-sur-pill:hover {
+    background-color: #195308;
+  }
+
+  /* Gradiente para difuminar la imagen superior del Hero con el header */
+  .hero-mask-top {
+    background: linear-gradient(180deg, #F5E9D8 0%, rgba(245, 233, 216, 0.95) 15%, rgba(245, 233, 216, 0.4) 40%, rgba(245, 233, 216, 0) 100%);
+  }
+
+  .hero-mask-bottom {
+    background: linear-gradient(0deg, #F5E9D8 0%, rgba(245, 233, 216, 0.8) 20%, rgba(245, 233, 216, 0) 100%);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F5E9D8;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A6900;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #385200;
+}
