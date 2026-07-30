@@ -68,10 +68,10 @@ const peliculas = [
   description="El Sur se Proyecta es una invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla."
 >
 
-  <!-- ==================== 1. HERO & TOP HEADER INTEGRADO ==================== -->
-  <section id="hero" class="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-sur-cream">
+  <!-- ==================== 1. HERO & EMBEDDED HEADER ==================== -->
+  <section id="hero" class="relative min-h-screen flex flex-col justify-between overflow-hidden bg-sur-cream">
     
-    <!-- Hero Background Photo -->
+    <!-- Hero Background Photo (Recurso 11.webp) -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/Recurso 11.webp"
@@ -79,21 +79,18 @@ const peliculas = [
         class="w-full h-full object-cover object-center"
         onerror="this.onerror=null; this.src='/images/Recurso 9.webp';"
       />
-      <!-- Top Cream Mask Gradient -->
-      <div class="absolute inset-0 bg-gradient-to-b from-sur-cream via-sur-cream/65 to-transparent h-72"></div>
-      <div class="absolute inset-0 bg-sur-cream/25"></div>
+      <!-- Top Soft Cream Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-sur-cream via-sur-cream/70 to-transparent h-80"></div>
+      <div class="absolute inset-0 bg-sur-cream/20"></div>
     </div>
 
-    <!-- Embedded Header Navigation -->
+    <!-- Top Embedded Header -->
     <header class="relative z-20 w-full pt-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
-        <!-- Empty left space or small logo icon -->
         <a href="/" class="flex items-center gap-2">
           <img src="/images/logo.svg" alt="El Sur se Proyecta" class="h-10 sm:h-12 w-auto object-contain" />
         </a>
 
-        <!-- Navigation Links in Open Sans Bold -->
         <nav class="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -105,14 +102,12 @@ const peliculas = [
           ))}
         </nav>
 
-        <!-- CTA Pill Button -->
         <div class="hidden md:flex">
           <Button href="#catalogo" variant="sur-pill" size="md">
             Ver Catálogo
           </Button>
         </div>
 
-        <!-- Mobile Toggle Button -->
         <button
           id="hero-menu-toggle"
           type="button"
@@ -125,7 +120,6 @@ const peliculas = [
         </button>
       </div>
 
-      <!-- Mobile Dropdown -->
       <div id="hero-mobile-menu" class="hidden md:hidden bg-sur-cream/95 backdrop-blur-md px-6 py-4 mt-2 border-b border-sur-olive/10 space-y-3 shadow-lg">
         {navLinks.map((link) => (
           <a href={link.href} class="block font-sans font-bold text-base text-sur-olive">
@@ -139,7 +133,7 @@ const peliculas = [
     </header>
 
     <!-- Main Hero Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 relative z-10 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Left: Official Big Logo SVG -->
@@ -147,7 +141,7 @@ const peliculas = [
           <img
             src="/images/logo.svg"
             alt="El Sur se Proyecta Logo"
-            class="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-auto object-contain filter drop-shadow-md select-none"
+            class="w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] h-auto object-contain filter drop-shadow-md select-none"
           />
         </div>
 
@@ -172,8 +166,8 @@ const peliculas = [
       </div>
     </div>
 
-    <!-- Bottom River Waves Graphic (Recurso 19.svg) -->
-    <div class="relative z-20 w-full leading-none -mt-16 sm:-mt-24 pointer-events-none">
+    <!-- Bottom Wave Decorative SVG (Recurso 19.svg) -->
+    <div class="relative z-20 w-full leading-none -mt-20 sm:-mt-28 pointer-events-none">
       <img
         src="/images/Recurso 19.svg"
         alt="Olas de río"
@@ -184,24 +178,24 @@ const peliculas = [
 
   </section>
 
-  <!-- ==================== 2. TERRITORIOS / MAPA SECTION (Vibrant Cyan #00A3DA) ==================== -->
+  <!-- ==================== 2. TERRITORIOS / MAPA SECTION (Cyan #00A3DA) ==================== -->
   <section id="sedes" class="py-20 bg-sur-cyan text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <!-- Left: Map / Pins Graphic -->
-        <div class="lg:col-span-6 flex justify-center">
+        <!-- Left: Map Vector (Recurso 20.svg / Recurso 17.svg) -->
+        <div class="lg:col-span-6 flex justify-center items-center">
           <img
             src="/images/Recurso 20.svg"
             alt="Mapa de Territorios El Sur se Proyecta"
-            class="w-full max-w-[480px] h-auto object-contain filter drop-shadow-lg"
+            class="w-full max-w-[500px] h-auto object-contain filter drop-shadow-xl"
             onerror="this.onerror=null; this.src='/images/Recurso 17.svg';"
           />
         </div>
 
-        <!-- Right: Content -->
+        <!-- Right: Text Content -->
         <div class="lg:col-span-6 space-y-6">
-          <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/20 text-white px-3.5 py-1 rounded-full inline-block">
+          <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/20 text-white px-4 py-1.5 rounded-full inline-block">
             DONDE ESTAMOS
           </span>
 
@@ -225,20 +219,20 @@ const peliculas = [
     </div>
   </section>
 
-  <!-- ==================== 3. MANIFIESTO SECTION (Vibrant Red #E3322B) ==================== -->
+  <!-- ==================== 3. RED / MANIFIESTO SECTION (Vibrant Red #E3322B) ==================== -->
   <section id="nosotros" class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
     
-    <!-- Left: Photo -->
-    <div class="min-h-[400px] lg:min-h-[550px] relative">
+    <!-- Left Photo: Community elders in jungle (Recurso 8.webp) -->
+    <div class="min-h-[420px] lg:min-h-[580px] relative">
       <img
         src="/images/Recurso 8.webp"
-        alt="Cine en territorio"
+        alt="Comunidad en territorio ancestral"
         class="w-full h-full object-cover"
         onerror="this.onerror=null; this.src='/images/Recurso 9.webp';"
       />
     </div>
 
-    <!-- Right: Red Manifiesto Block -->
+    <!-- Right: Vibrant Red Info Box -->
     <div class="bg-[#E3322B] text-white p-10 sm:p-14 lg:p-16 flex flex-col justify-center space-y-6">
       <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/20 px-3.5 py-1 rounded-full self-start">
         UNA RED EN MOVIMIENTO
@@ -255,31 +249,46 @@ const peliculas = [
 
   </section>
 
-  <!-- ==================== 4. GALERÍA FOTOGRÁFICA DE LA MINGA ==================== -->
-  <section class="py-2 bg-sur-cream">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-      <div class="aspect-square overflow-hidden">
-        <img src="/images/Recurso 2.webp" alt="Minga Audiovisual 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </div>
-      <div class="aspect-square overflow-hidden">
-        <img src="/images/Recurso 9.webp" alt="Proyección Nocturna 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </div>
-      <div class="aspect-square overflow-hidden">
-        <img src="/images/Recurso 3.webp" alt="Taller Comunitario 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </div>
-      <div class="aspect-square overflow-hidden">
-        <img src="/images/Recurso 4.webp" alt="Comunidad 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </div>
-      <div class="aspect-square overflow-hidden">
-        <img src="/images/Recurso 5.webp" alt="Naturaleza 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </div>
-      <div class="aspect-square overflow-hidden">
-        <img src="/images/Recurso 6.webp" alt="Cine al aire libre 6" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+  <!-- ==================== 4. PHOTO MASONRY GRID (As in Mockup) ==================== -->
+  <section class="py-4 bg-sur-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Row 1 Left: Straw/Fiber harvest (Recurso 2.webp) -->
+        <div class="md:row-span-2 rounded-2xl overflow-hidden shadow-md group">
+          <img src="/images/Recurso 2.webp" alt="Minga y Territorio 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 min-h-[300px]" />
+        </div>
+
+        <!-- Row 1 Center: Night projection in maloca (Recurso 9.webp) -->
+        <div class="md:col-span-2 rounded-2xl overflow-hidden shadow-md group">
+          <img src="/images/Recurso 9.webp" alt="Proyección en Maloca 2" class="w-full h-[280px] sm:h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" />
+        </div>
+
+        <!-- Row 2 Center-Left: Workshop under canopy (Recurso 3.webp) -->
+        <div class="rounded-2xl overflow-hidden shadow-md group">
+          <img src="/images/Recurso 3.webp" alt="Taller Comunitario 3" class="w-full h-[240px] object-cover group-hover:scale-105 transition-transform duration-300" />
+        </div>
+
+        <!-- Row 2 Center-Right: Shepherd in paramo (Recurso 4.webp) -->
+        <div class="rounded-2xl overflow-hidden shadow-md group">
+          <img src="/images/Recurso 4.webp" alt="Territorio Páramo 4" class="w-full h-[240px] object-cover group-hover:scale-105 transition-transform duration-300" />
+        </div>
+
+        <!-- Row 3 Left: Condor flying (Recurso 5.webp) -->
+        <div class="rounded-2xl overflow-hidden shadow-md group">
+          <img src="/images/Recurso 5.webp" alt="Fauna y Naturaleza 5" class="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-300" />
+        </div>
+
+        <!-- Row 3 Center & Right: Aerial river (Recurso 6.webp) -->
+        <div class="md:col-span-2 rounded-2xl overflow-hidden shadow-md group">
+          <img src="/images/Recurso 6.webp" alt="Río y Selva 6" class="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-300" />
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ==================== 5. NOCHES DE CINE EN EL TERRITORIO (Olive Green Block) ==================== -->
+  <!-- ==================== 5. OLIVE GREEN SECTION (Recurso 7.webp) ==================== -->
   <section class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
     
     <!-- Left: Olive Green Info Block -->
@@ -297,25 +306,26 @@ const peliculas = [
       </p>
     </div>
 
-    <!-- Right: Night Projection Photo -->
+    <!-- Right: Outdoor Night Cinema Photo (Recurso 7.webp) -->
     <div class="min-h-[400px] lg:min-h-[500px] relative">
       <img
-        src="/images/Recurso 9.webp"
-        alt="Proyección de cine al aire libre"
+        src="/images/Recurso 7.webp"
+        alt="Proyección de cine en plaza pública"
         class="w-full h-full object-cover"
-        onerror="this.onerror=null; this.src='/images/Recurso 8.webp';"
+        onerror="this.onerror=null; this.src='/images/Recurso 10.webp';"
       />
     </div>
 
   </section>
 
-  <!-- ==================== 6. DECORATIVE TRIBAL SEPARATOR ==================== -->
-  <div class="bg-sur-cream py-6 flex justify-center items-center gap-4 overflow-hidden select-none opacity-90">
-    <img src="/images/Recurso 13.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
-    <img src="/images/Recurso 14.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
-    <img src="/images/Recurso 15.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
-    <img src="/images/Recurso 16.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
-    <img src="/images/Recurso 17.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
+  <!-- ==================== 6. DECORATIVE TRIBAL SYMBOLS ROW ==================== -->
+  <div class="bg-sur-cream py-8 flex justify-center items-center gap-6 overflow-hidden select-none opacity-90">
+    <img src="/images/Recurso 13.svg" alt="Simbolo" class="h-9 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 14.svg" alt="Simbolo" class="h-9 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 15.svg" alt="Simbolo" class="h-9 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 16.svg" alt="Simbolo" class="h-9 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 17.svg" alt="Simbolo" class="h-9 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 18.svg" alt="Simbolo" class="h-9 w-auto object-contain" onerror="this.style.display='none';" />
   </div>
 
   <!-- ==================== 7. COLABORACIÓN / ALIADOS SECTION ==================== -->
@@ -363,7 +373,7 @@ const peliculas = [
         </h2>
       </div>
 
-      <!-- Filter Buttons -->
+      <!-- Filter Pills -->
       <div class="flex flex-wrap justify-center gap-2 mb-12">
         <button class="font-sans font-bold text-xs bg-sur-green text-white px-5 py-2 rounded-full">TODAS</button>
         <button class="font-sans font-bold text-xs bg-sur-cream border border-sur-olive/20 text-sur-olive hover:bg-sur-olive hover:text-white px-5 py-2 rounded-full transition-colors">DOCUMENTAL</button>
@@ -410,7 +420,7 @@ const peliculas = [
     </div>
   </section>
 
-  <!-- ==================== 9. RECURSOS Y HERRAMIENTAS SECTION ==================== -->
+  <!-- ==================== 9. RECURSOS Y HERRAMIENTAS SECTION (Orange Cards) ==================== -->
   <section id="recursos" class="py-20 bg-sur-cream border-t border-sur-olive/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -424,9 +434,8 @@ const peliculas = [
         </p>
       </div>
 
-      <!-- 3 Resource Cards in Orange / Olive -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between">
+        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-all">
           <div class="space-y-2">
             <h3 class="font-sur-brand text-3xl uppercase tracking-wide">Guía de Proyección</h3>
             <p class="font-sans font-normal text-xs text-white/90 leading-relaxed">
@@ -438,7 +447,7 @@ const peliculas = [
           </Button>
         </div>
 
-        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between">
+        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-all">
           <div class="space-y-2">
             <h3 class="font-sur-brand text-3xl uppercase tracking-wide">Manual de Mediación</h3>
             <p class="font-sans font-normal text-xs text-white/90 leading-relaxed">
@@ -450,7 +459,7 @@ const peliculas = [
           </Button>
         </div>
 
-        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between">
+        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-all">
           <div class="space-y-2">
             <h3 class="font-sur-brand text-3xl uppercase tracking-wide">Kit de Difusión</h3>
             <p class="font-sans font-normal text-xs text-white/90 leading-relaxed">
@@ -501,24 +510,23 @@ const peliculas = [
     </div>
   </section>
 
-  <!-- ==================== 11. BOTTOM BANNER / LOGO BANNER (Vibrant Cyan) ==================== -->
+  <!-- ==================== 11. BOTTOM BANNER / LOGO BANNER (Cyan #00A3DA) ==================== -->
   <section class="bg-sur-cyan text-white py-16 text-center relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center space-y-4">
       <img
         src="/images/Recurso 20.svg"
         alt="El Sur se Proyecta Logo Ilustración"
-        class="h-28 w-auto object-contain filter drop-shadow-md"
+        class="h-32 w-auto object-contain filter drop-shadow-md"
         onerror="this.onerror=null; this.src='/images/logo.svg';"
       />
     </div>
   </section>
 
-  <!-- ==================== 12. FOOTER INTEGRADO AL FINAL ==================== -->
+  <!-- ==================== 12. FOOTER INTEGRADO ==================== -->
   <footer class="bg-sur-cream border-t border-sur-olive/20 pt-16 pb-12 text-sur-olive text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-sur-olive/20">
         
-        <!-- Brand column -->
         <div class="lg:col-span-2 space-y-4">
           <a href="/" class="flex items-center gap-3">
             <img src="/images/logo.svg" alt="El Sur se Proyecta" class="h-12 w-auto object-contain" />
@@ -528,7 +536,6 @@ const peliculas = [
           </p>
         </div>
 
-        <!-- Footer Columns -->
         <div class="space-y-3">
           <h3 class="font-sans font-bold text-sm text-sur-olive-dark tracking-wider uppercase">Navegación</h3>
           <ul class="space-y-2 font-sans font-medium text-xs">
@@ -560,7 +567,6 @@ const peliculas = [
 
       </div>
 
-      <!-- Bottom Bar -->
       <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-sur-olive/70 font-sans font-medium">
         <p>© 2026 El Sur se Proyecta. Todos los derechos reservados. Desarrollado por ALVAROMEJIA.</p>
         <div class="flex items-center gap-6">
@@ -574,7 +580,6 @@ const peliculas = [
 </BaseLayout>
 
 <script>
-  // Script para el menú móvil del hero integrado
   const toggleBtn = document.getElementById('hero-menu-toggle');
   const mobileMenu = document.getElementById('hero-mobile-menu');
 
