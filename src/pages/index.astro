@@ -68,19 +68,18 @@ const peliculas = [
   description="El Sur se Proyecta es una invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla."
 >
 
-  <!-- ==================== 1. LARGER HERO SECTION (MIN-H-SCREEN) ==================== -->
-  <section id="hero" class="relative min-h-screen lg:min-h-[105vh] flex flex-col justify-between overflow-hidden bg-sur-cream">
+  <!-- ==================== 1. HERO BANNER GRAN TAMAÑO ==================== -->
+  <section id="hero" class="relative min-h-[96vh] lg:min-h-[105vh] flex flex-col justify-between overflow-hidden bg-sur-cream">
     
-    <!-- Hero Maloca Background Image -->
+    <!-- Exact Maloca Background Image -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/hero-maloca.webp"
         alt="Comunidad El Sur se Proyecta en la maloca"
         class="w-full h-full object-cover object-center"
       />
-      <!-- Top Cream Gradient Mask for Header Legibility -->
+      <!-- Top Soft Cream Gradient -->
       <div class="absolute inset-0 bg-gradient-to-b from-sur-cream via-sur-cream/60 to-transparent h-88"></div>
-      <!-- Soft Light Warm Overlay -->
       <div class="absolute inset-0 bg-sur-cream/15"></div>
     </div>
 
@@ -88,7 +87,6 @@ const peliculas = [
     <header class="relative z-20 w-full pt-8 pb-4">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        <!-- Small brand logo icon top left -->
         <a href="/" class="flex items-center gap-2">
           <img src="/images/logo.svg" alt="El Sur se Proyecta" class="h-10 sm:h-12 w-auto object-contain" />
         </a>
@@ -138,16 +136,16 @@ const peliculas = [
       </div>
     </header>
 
-    <!-- Main Hero Content (Expanded Layout) -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-36 relative z-10 w-full flex-grow flex items-center">
+    <!-- Main Hero Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-36 relative z-10 w-full flex-grow flex items-center">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center w-full">
         
-        <!-- Left: Larger Official Logo SVG -->
+        <!-- Left: Large Official Logo SVG -->
         <div class="lg:col-span-5 flex justify-start items-center">
           <img
             src="/images/logo.svg"
             alt="El Sur se Proyecta Logo"
-            class="w-full max-w-[380px] sm:max-w-[480px] lg:max-w-[540px] h-auto object-contain filter drop-shadow-lg select-none transition-transform duration-300 hover:scale-[1.01]"
+            class="w-full max-w-[380px] sm:max-w-[480px] lg:max-w-[540px] h-auto object-contain filter drop-shadow-lg select-none"
           />
         </div>
 
@@ -172,13 +170,11 @@ const peliculas = [
       </div>
     </div>
 
-    <!-- Clean Bottom Wave Decorative SVG (olas-rio.svg) without the projector emblem -->
-    <div class="relative z-20 w-full leading-none -mt-20 sm:-mt-32 pointer-events-none">
-      <img
-        src="/images/olas-rio.svg"
-        alt="Olas del río El Sur se Proyecta"
-        class="w-full h-auto block object-cover"
-      />
+    <!-- Clean Organic Wave Transition into Cyan Section (NO Recurso 19/20 circles) -->
+    <div class="relative z-20 w-full leading-none -mt-12 sm:-mt-20 pointer-events-none text-sur-cyan">
+      <svg class="w-full h-auto block" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,32 C280,96 560,0 840,48 C1120,96 1320,24 1440,36 L1440,120 L0,120 Z" fill="currentColor"></path>
+      </svg>
     </div>
 
   </section>
@@ -188,7 +184,7 @@ const peliculas = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <!-- Left: Map Illustration (Recurso 20.svg / Recurso 17.svg) -->
+        <!-- Left: Map Illustration (mapa-cyan.webp / Recurso 20.svg) -->
         <div class="lg:col-span-6 flex justify-center items-center">
           <img
             src="/images/Recurso 20.svg"
