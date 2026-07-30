@@ -170,7 +170,7 @@ const peliculas = [
       </div>
     </div>
 
-    <!-- Clean Organic Wave Transition into Cyan Section (NO Recurso 19/20 circles) -->
+    <!-- Clean Organic Wave Transition into Cyan Section -->
     <div class="relative z-20 w-full leading-none -mt-12 sm:-mt-20 pointer-events-none text-sur-cyan">
       <svg class="w-full h-auto block" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <path d="M0,32 C280,96 560,0 840,48 C1120,96 1320,24 1440,36 L1440,120 L0,120 Z" fill="currentColor"></path>
@@ -179,49 +179,58 @@ const peliculas = [
 
   </section>
 
-  <!-- ==================== 2. TERRITORIOS / MAPA SECTION (Cyan #00A3DA) ==================== -->
-  <section id="sedes" class="py-24 bg-sur-cyan text-white relative overflow-hidden">
+  <!-- ==================== 2. SEGUNDA SECCIÓN (SOBRE NOSOTROS - CIAN #00A3DA) ==================== -->
+  <section id="nosotros" class="py-20 lg:py-28 bg-sur-cyan text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         
-        <!-- Left: Map Illustration (mapa-cyan.webp / Recurso 20.svg) -->
-        <div class="lg:col-span-6 flex justify-center items-center">
+        <!-- Left: Map Vector (Recurso 17.svg / Recurso 20.svg) -->
+        <div class="lg:col-span-5 flex justify-center items-center">
           <img
-            src="/images/Recurso 20.svg"
-            alt="Mapa de Territorios El Sur se Proyecta"
-            class="w-full max-w-[520px] h-auto object-contain filter drop-shadow-xl"
-            onerror="this.onerror=null; this.src='/images/Recurso 17.svg';"
+            src="/images/Recurso 17.svg"
+            alt="Mapa de Territorios Mullu, Nodo Sur, Ambulante"
+            class="w-full max-w-[480px] h-auto object-contain filter drop-shadow-xl"
+            onerror="this.onerror=null; this.src='/images/Recurso 20.svg';"
           />
         </div>
 
-        <!-- Right: Text Content -->
-        <div class="lg:col-span-6 space-y-6">
-          <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/20 text-white px-4 py-1.5 rounded-full inline-block">
-            DONDE ESTAMOS
+        <!-- Right: Text Content according to exact mockup -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="font-sans font-bold text-xs uppercase tracking-widest text-white/90">
+            SOBRE NOSOTROS
           </span>
 
-          <h2 class="font-sur-brand text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wide leading-[0.95] text-white">
-            EL SUR YA TIENE LAS HISTORIAS.<br />
-            AHORA LAS PROYECTAMOS JUNTAS.
+          <h2 class="font-sur-brand text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wide leading-[0.95] text-[#F5E9D8]">
+            EL SUR YA TIENE LAS HISTORIAS<br />
+            AHORA LAS PROYECTAMOS JUNTXS
           </h2>
 
-          <p class="font-sans font-normal text-white/95 text-base sm:text-lg leading-relaxed">
-            El Sur se Proyecta es una iniciativa de itinerancia de cine comunitario que conecta territorios a través del audiovisual, promoviendo el encuentro, la reflexión y la memoria en comunidades rurales e indígenas.
+          <p class="font-sans font-normal text-white text-base sm:text-lg leading-relaxed">
+            Somos una red que conecta narradorxs, exhibidorxs comunitarixs, organizaciones de base y públicos en Ecuador, Colombia y México, apostando porque historias climáticas de todos los géneros y formatos lleguen a quienes se reconocen en ellas y detonen conversaciones reales.
+          </p>
+
+          <p class="font-sans font-normal text-white/90 text-sm sm:text-base leading-relaxed">
+            Nace de la alianza entre Mullu, Nodo Sur y Ambulante, con el apoyo de Doc Society. Tres organizaciones de tres países, cada una con su red, su historia y su arraigo, que decidieron construir juntas una apuesta regional que conecta narrativas climáticas, territorios y audiencias, combinando lo digital con procesos presenciales de exhibición y mediación, porque cuando una narrativa encuentra su comunidad, ese encuentro se vuelve semilla de cambio.
           </p>
 
           <div class="pt-2">
-            <Button href="#sedes" variant="primary" size="lg" className="bg-sur-green hover:bg-sur-green-hover text-white font-sans font-bold border-0">
-              Conoce las Sedes
+            <Button href="#recursos" variant="primary" size="lg" className="bg-[#1e612b] hover:bg-[#164a20] text-white font-sans font-bold border-0 px-8 py-3.5 rounded-full shadow-lg">
+              Recursos y Guías
             </Button>
           </div>
         </div>
 
       </div>
     </div>
+
+    <!-- Bottom Right Decorative Wave (Recurso 18.svg) -->
+    <div class="absolute bottom-0 right-0 z-0 pointer-events-none w-64 sm:w-80 lg:w-96 opacity-90">
+      <img src="/images/Recurso 18.svg" alt="Olas decorativas" class="w-full h-auto object-contain" />
+    </div>
   </section>
 
   <!-- ==================== 3. MANIFIESTO ROJO SECTION ==================== -->
-  <section id="nosotros" class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
+  <section id="manifiesto" class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
     
     <!-- Left Photo: Community elders in jungle (manifiesto-rojo.webp) -->
     <div class="min-h-[420px] lg:min-h-[580px] relative">
@@ -526,8 +535,8 @@ const peliculas = [
           <h3 class="font-sans font-bold text-sm text-sur-olive-dark tracking-wider uppercase">Navegación</h3>
           <ul class="space-y-2 font-sans font-medium text-xs">
             <li><a href="#hero" class="hover:underline">Inicio</a></li>
-            <li><a href="#sedes" class="hover:underline">Territorios y Sedes</a></li>
-            <li><a href="#nosotros" class="hover:underline">Manifiesto</a></li>
+            <li><a href="#nosotros" class="hover:underline">Sobre Nosotros</a></li>
+            <li><a href="#manifiesto" class="hover:underline">Manifiesto</a></li>
             <li><a href="#catalogo" class="hover:underline">Catálogo</a></li>
             <li><a href="#recursos" class="hover:underline">Recursos</a></li>
           </ul>
