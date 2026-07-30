@@ -36,7 +36,6 @@ const filmCatalog = [
     
     <!-- Background Image with Gradient Overlays -->
     <div class="absolute inset-0 z-0">
-      <!-- Image tag checking public/images/hero-bg.jpg with fallback background -->
       <img
         src="/images/hero-bg.jpg"
         alt="Comunidad El Sur se Proyecta en la maloca"
@@ -53,28 +52,30 @@ const filmCatalog = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
         
-        <!-- Left Column: Big Brand Typography -->
+        <!-- Left Column: Big Brand Typography in League Gothic -->
         <div class="lg:col-span-5 flex justify-start">
-          <div class="flex flex-col uppercase font-sur-brand leading-[0.82] text-sur-olive select-none">
-            <span class="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight">EL</span>
-            <span class="text-8xl sm:text-9xl md:text-[11rem] font-extrabold tracking-tighter -mt-2 sm:-mt-4">SÜR</span>
-            <span class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight -mt-1 sm:-mt-2">SE PROYECTA</span>
+          <div class="flex flex-col uppercase font-sur-brand leading-[0.80] text-sur-olive select-none">
+            <span class="text-7xl sm:text-8xl md:text-9xl">EL</span>
+            <span class="text-[9rem] sm:text-[11rem] md:text-[13rem] tracking-tight -mt-2 sm:-mt-5">SÜR</span>
+            <span class="text-5xl sm:text-6xl md:text-7xl tracking-wide -mt-2 sm:-mt-4">SE PROYECTA</span>
           </div>
         </div>
 
-        <!-- Right Column: Headline, Description & CTA -->
+        <!-- Right Column: Headline in League Gothic, Body in Open Sans Regular -->
         <div class="lg:col-span-7 space-y-6 max-w-2xl">
-          <h1 class="font-sur-brand text-3xl sm:text-4xl lg:text-5xl font-bold text-sur-olive uppercase leading-[1.05] tracking-tight">
+          <h1 class="font-sur-brand text-4xl sm:text-5xl lg:text-6xl text-sur-olive uppercase leading-[0.95] tracking-wide">
             UNA MINGA DE CINE,<br class="hidden sm:inline" />
             TERRITORIO Y COMUNIDAD
           </h1>
 
-          <p class="text-base sm:text-lg text-sur-olive/90 font-medium leading-relaxed max-w-xl">
+          <!-- Subtitle / Body text in Open Sans Regular -->
+          <p class="font-sans font-normal text-base sm:text-lg text-sur-olive/90 leading-relaxed max-w-xl">
             El Sur se Proyecta es una Invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla.
           </p>
 
+          <!-- Button in Open Sans Bold -->
           <div class="pt-2">
-            <Button href="#catalogo" variant="sur-pill" size="lg" className="px-8 py-3.5 text-base">
+            <Button href="#catalogo" variant="sur-pill" size="lg" className="px-8 py-3.5 text-base font-sans font-bold">
               Explorar Catálogo
             </Button>
           </div>
@@ -83,14 +84,14 @@ const filmCatalog = [
       </div>
     </div>
 
-    <!-- Decorative Organic River Waves (Bottom Decorative Element from Mockup) -->
+    <!-- Decorative Organic River Waves -->
     <div class="relative z-20 w-full leading-none -mt-16 pointer-events-none">
       <svg class="w-full h-auto block" viewBox="0 0 1440 220" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         
         <!-- Dark Green Base Wave with River Line Patterns -->
         <path d="M0,80 C320,160 640,20 960,110 C1200,180 1360,100 1440,120 L1440,220 L0,220 Z" fill="#0F4A06" />
         
-        <!-- Cyan River Pattern Overlay Lines inside Bottom Left Wave -->
+        <!-- Cyan River Pattern Overlay Lines -->
         <g stroke="#00A3DA" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85">
           <path d="M-20,180 Q100,120 220,160 T460,140 T680,180" />
           <path d="M-20,195 Q110,135 230,175 T470,155 T690,195" />
@@ -109,10 +110,12 @@ const filmCatalog = [
   <section id="nosotros" class="py-20 bg-sur-cream border-t border-sur-olive/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center space-y-4">
-        <h2 class="font-sur-brand text-3xl sm:text-4xl font-bold text-sur-olive uppercase tracking-tight">
+        <!-- Title in League Gothic Regular -->
+        <h2 class="font-sur-brand text-4xl sm:text-5xl text-sur-olive uppercase tracking-wide">
           Cine Itinerante y Comunitario
         </h2>
-        <p class="text-lg text-sur-olive/80 leading-relaxed font-medium">
+        <!-- Text in Open Sans Regular -->
+        <p class="font-sans font-normal text-base sm:text-lg text-sur-olive/80 leading-relaxed">
           Impulsamos proyecciones cinematográficas participativas en espacios comunitarios, centros culturales y territorios rurales. El cine como punto de encuentro, diálogo e intercambio de saberes.
         </p>
       </div>
@@ -120,21 +123,23 @@ const filmCatalog = [
       <!-- Metric Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
         <div class="bg-sur-cream-light p-8 rounded-3xl border border-sur-olive/15 text-center space-y-2 shadow-sm">
-          <span class="font-sur-brand text-5xl font-bold text-sur-olive">+25</span>
-          <h3 class="font-bold text-sur-olive-dark">Territorios Recorridos</h3>
-          <p class="text-xs text-sur-olive/70">Comunidades rurales e indígenas conectadas.</p>
+          <span class="font-sur-brand text-6xl text-sur-olive">+25</span>
+          <!-- Subtitle in Open Sans Bold -->
+          <h3 class="font-sans font-bold text-lg text-sur-olive-dark">Territorios Recorridos</h3>
+          <!-- Text in Open Sans Regular -->
+          <p class="font-sans font-normal text-xs text-sur-olive/70">Comunidades rurales e indígenas conectadas.</p>
         </div>
 
         <div class="bg-sur-cream-light p-8 rounded-3xl border border-sur-olive/15 text-center space-y-2 shadow-sm">
-          <span class="font-sur-brand text-5xl font-bold text-sur-olive">+40</span>
-          <h3 class="font-bold text-sur-olive-dark">Proyecciones Realizadas</h3>
-          <p class="text-xs text-sur-olive/70">Funciones al aire libre y en malocas comunitarias.</p>
+          <span class="font-sur-brand text-6xl text-sur-olive">+40</span>
+          <h3 class="font-sans font-bold text-lg text-sur-olive-dark">Proyecciones Realizadas</h3>
+          <p class="font-sans font-normal text-xs text-sur-olive/70">Funciones al aire libre y en malocas comunitarias.</p>
         </div>
 
         <div class="bg-sur-cream-light p-8 rounded-3xl border border-sur-olive/15 text-center space-y-2 shadow-sm">
-          <span class="font-sur-brand text-5xl font-bold text-sur-olive">100%</span>
-          <h3 class="font-bold text-sur-olive-dark">Cine Independiente</h3>
-          <p class="text-xs text-sur-olive/70">Cultura, memoria e identidad territorial.</p>
+          <span class="font-sur-brand text-6xl text-sur-olive">100%</span>
+          <h3 class="font-sans font-bold text-lg text-sur-olive-dark">Cine Independiente</h3>
+          <p class="font-sans font-normal text-xs text-sur-olive/70">Cultura, memoria e identidad territorial.</p>
         </div>
       </div>
     </div>
@@ -146,12 +151,14 @@ const filmCatalog = [
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-sur-olive">Muestra Audiovisual</span>
-          <h2 class="font-sur-brand text-3xl sm:text-4xl font-bold text-sur-olive uppercase tracking-tight">
+          <!-- Subtitle in Open Sans Bold -->
+          <span class="font-sans font-bold text-xs uppercase tracking-widest text-sur-olive">Muestra Audiovisual</span>
+          <!-- Title in League Gothic -->
+          <h2 class="font-sur-brand text-4xl sm:text-5xl text-sur-olive uppercase tracking-wide">
             Catálogo Disponible
           </h2>
         </div>
-        <Button href="#catalogo" variant="sur-pill" size="md">
+        <Button href="#catalogo" variant="sur-pill" size="md" className="font-sans font-bold">
           Ver Catálogo Completo
         </Button>
       </div>
@@ -162,17 +169,17 @@ const filmCatalog = [
             <div>
               <div class="aspect-video w-full overflow-hidden relative">
                 <img src={film.image} alt={film.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                <span class="absolute top-3 left-3 bg-sur-green text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <span class="font-sans font-bold absolute top-3 left-3 bg-sur-green text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">
                   {film.category}
                 </span>
               </div>
               <div class="p-6 space-y-2">
-                <h3 class="font-sur-brand text-2xl font-bold text-sur-olive uppercase">{film.title}</h3>
-                <p class="text-xs font-semibold text-sur-olive/70">Director: {film.director} • {film.duration}</p>
+                <h3 class="font-sur-brand text-3xl text-sur-olive uppercase tracking-wide">{film.title}</h3>
+                <p class="font-sans font-bold text-xs text-sur-olive/70">Director: {film.director} • {film.duration}</p>
               </div>
             </div>
             <div class="px-6 pb-6 pt-2">
-              <Button href="#catalogo" variant="secondary" size="sm" className="w-full justify-center">
+              <Button href="#catalogo" variant="secondary" size="sm" className="w-full justify-center font-sans font-bold">
                 Solicitar Función
               </Button>
             </div>
@@ -186,14 +193,17 @@ const filmCatalog = [
   <!-- CTA Section -->
   <section id="sedes" class="py-20 bg-sur-olive text-sur-cream relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-      <h2 class="font-sur-brand text-4xl sm:text-5xl font-bold uppercase tracking-tight">
+      <!-- Title in League Gothic -->
+      <h2 class="font-sur-brand text-5xl sm:text-6xl uppercase tracking-wide">
         Lleva el cine a tu territorio
       </h2>
-      <p class="text-sur-cream/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+      <!-- Text in Open Sans Regular -->
+      <p class="font-sans font-normal text-sur-cream/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
         ¿Te gustaría ser sede de proyecciones o conectar a tu comunidad? Organiza una función con el equipo de El Sur se Proyecta.
       </p>
       <div class="pt-2 flex justify-center">
-        <Button href="#contact" variant="secondary" size="lg" className="bg-sur-cream text-sur-olive hover:bg-white border-0 font-bold">
+        <!-- Button in Open Sans Bold -->
+        <Button href="#contact" variant="secondary" size="lg" className="bg-sur-cream text-sur-olive hover:bg-white border-0 font-sans font-bold">
           Sumar mi Comunidad
         </Button>
       </div>

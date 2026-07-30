@@ -19,8 +19,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Oswald', 'Bebas Neue', 'Impact', 'sans-serif'],
+        sans: ['"Open Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"League Gothic"', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
