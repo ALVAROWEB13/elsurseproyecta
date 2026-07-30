@@ -227,65 +227,125 @@ const peliculas = [
     </div>
   </section>
 
-  <!-- ==================== 3. MANIFIESTO ROJO SECTION ==================== -->
-  <section id="manifiesto" class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
+  <!-- ==================== 3. TERCERA SECCIÓN (MANIFIESTO ROJO - PARA QUÉ ESTAMOS AQUÍ) ==================== -->
+  <section id="manifiesto" class="grid grid-cols-1 lg:grid-cols-2 bg-[#E3322B]">
     
-    <!-- Left Photo: Community elders in jungle (manifiesto-rojo.webp) -->
-    <div class="min-h-[420px] lg:min-h-[580px] relative">
+    <!-- Left Photo: Community elders in jungle with overlay text -->
+    <div class="min-h-[440px] lg:min-h-[600px] relative overflow-hidden group">
       <img
         src="/images/manifiesto-rojo.webp"
-        alt="Comunidad en territorio ancestral"
-        class="w-full h-full object-cover"
+        alt="Charip: el relámpago del río"
+        class="w-full h-full object-cover object-center"
       />
+      <!-- Top-left Photo Caption Overlay -->
+      <div class="absolute top-5 left-5 z-10 drop-shadow-md">
+        <span class="font-sans font-bold text-white text-sm sm:text-base tracking-wide bg-black/30 backdrop-blur-xs px-3.5 py-1 rounded-md">
+          Charip: el relámpago del río
+        </span>
+      </div>
     </div>
 
-    <!-- Right: Vibrant Red Info Box -->
+    <!-- Right: Vibrant Red Info Box (#E3322B) -->
     <div class="bg-[#E3322B] text-white p-10 sm:p-14 lg:p-16 flex flex-col justify-center space-y-6">
-      <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/20 px-3.5 py-1 rounded-full self-start">
-        UNA RED EN MOVIMIENTO
-      </span>
+      
+      <h3 class="font-sans font-bold text-sm sm:text-base uppercase tracking-widest text-white">
+        PARA QUÉ ESTAMOS AQUÍ
+      </h3>
 
-      <p class="font-sans font-normal text-white text-base sm:text-lg leading-relaxed">
-        El cine en los territorios no es solo entretenimiento, es una herramienta de resistencia, memoria y tejido social. Creemos en un cine que no solo se contempla, sino que se camina, se platica y se sueña colectivamente.
+      <p class="font-sans font-medium text-white text-base sm:text-lg leading-relaxed">
+        Queremos que las narrativas climáticas del Sur Global me circulen entre los territorios que las producen, que lleguen a quienes se reconocen en ellas y que abran conversaciones que se conviertan en acción. Para eso combinamos la fuerza de la comunicación digital con los procesos presenciales: la exhibición, la mediación y el diálogo como herramientas de encuentro y cambio.
       </p>
 
-      <p class="font-sans font-normal text-white/90 text-base sm:text-lg leading-relaxed">
-        Esta minga busca descentralizar el acceso al cine, fortaleciendo los procesos locales de comunicación comunitaria y creando pantallas donde nuestras propias historias se reconozcan.
+      <p class="font-sans font-medium text-white/95 text-base sm:text-lg leading-relaxed">
+        Creemos que el cine, en todos sus géneros, es un espacio para que comunidades indígenas, afrodescendientes, rurales y juveniles cuenten su propia relación con el territorio, el agua, la tierra y la vida. Y que esas historias, cuando circulan, fortalecen la visibilidad y la articulación de quienes las protagonizan.
       </p>
     </div>
 
   </section>
 
-  <!-- ==================== 4. MUESTRA FOTOGRÁFICA MASONRY ==================== -->
-  <section class="py-4 bg-sur-cream">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        
-        <div class="md:row-span-2 rounded-2xl overflow-hidden shadow-md group">
-          <img src="/images/Recurso 2.webp" alt="Minga y Territorio 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 min-h-[300px]" />
+  <!-- ==================== 4. CUARTA SECCIÓN (GALERÍA MASONRY DE 6 FOTOS EDGE-TO-EDGE) ==================== -->
+  <section class="bg-black">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+      
+      <!-- COLUMN 1 (LEFT COLUMN) -->
+      <div class="flex flex-col">
+        <!-- Photo 1: Sembradoras de vida -->
+        <div class="relative aspect-[4/3] overflow-hidden group">
+          <img src="/images/Recurso 2.webp" alt="Sembradoras de vida" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute bottom-4 left-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              Sembradoras de vida
+            </span>
+          </div>
         </div>
 
-        <div class="md:col-span-2 rounded-2xl overflow-hidden shadow-md group">
-          <img src="/images/noches-cine.webp" alt="Proyección en Maloca 2" class="w-full h-[280px] sm:h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" />
+        <!-- Photo 2: Boubé de los Fulani -->
+        <div class="relative aspect-[4/3] overflow-hidden group">
+          <img src="/images/Recurso 4.webp" alt="Boubé de los Fulani" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute bottom-4 left-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              Boubé de los Fulani
+            </span>
+          </div>
         </div>
-
-        <div class="rounded-2xl overflow-hidden shadow-md group">
-          <img src="/images/Recurso 3.webp" alt="Taller Comunitario 3" class="w-full h-[240px] object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-
-        <div class="rounded-2xl overflow-hidden shadow-md group">
-          <img src="/images/Recurso 4.webp" alt="Territorio Páramo 4" class="w-full h-[240px] object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-
-        <div class="rounded-2xl overflow-hidden shadow-md group">
-          <img src="/images/Recurso 5.webp" alt="Fauna y Naturaleza 5" class="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-
-        <div class="md:col-span-2 rounded-2xl overflow-hidden shadow-md group">
-          <img src="/images/Recurso 6.webp" alt="Río y Selva 6" class="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-
       </div>
+
+      <!-- COLUMN 2 (CENTER COLUMN) -->
+      <div class="flex flex-col">
+        <!-- Photo 3: Cinema Caco / México -->
+        <div class="relative aspect-[3/4] overflow-hidden group">
+          <img src="/images/noches-cine.webp" alt="Cinema Caco México" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute top-4 left-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              Cinema Caco
+            </span>
+          </div>
+          <div class="absolute top-4 right-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              México
+            </span>
+          </div>
+        </div>
+
+        <!-- Photo 4: Tierra Alta -->
+        <div class="relative aspect-[4/3] overflow-hidden group">
+          <img src="/images/Recurso 5.webp" alt="Tierra Alta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute top-4 left-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              Tierra Alta
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMN 3 (RIGHT COLUMN) -->
+      <div class="flex flex-col">
+        <!-- Photo 5: Pakkiru / Ecuador -->
+        <div class="relative aspect-[4/3] overflow-hidden group">
+          <img src="/images/Recurso 3.webp" alt="Pakkiru Ecuador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute bottom-4 left-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              Pakkiru
+            </span>
+          </div>
+          <div class="absolute bottom-4 right-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              Ecuador
+            </span>
+          </div>
+        </div>
+
+        <!-- Photo 6: Botes nuevos -->
+        <div class="relative aspect-[3/4] overflow-hidden group">
+          <img src="/images/Recurso 6.webp" alt="Botes nuevos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute bottom-4 left-4 z-10">
+            <span class="font-sans font-bold text-white text-sm sm:text-base drop-shadow-md">
+              Botes nuevos
+            </span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
