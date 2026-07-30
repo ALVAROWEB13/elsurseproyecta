@@ -2,99 +2,166 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/ui/Button.astro';
 
-const filmCatalog = [
+const navLinks = [
+  { name: 'Nosotros', href: '#nosotros' },
+  { name: 'Catálogo', href: '#catalogo' },
+  { name: 'Recursos', href: '#recursos' },
+  { name: 'Sedes', href: '#sedes' },
+  { name: 'Reporte', href: '#reporte' },
+];
+
+const aliados = [
+  { nombre: 'FUNGOMBA', territorio: 'PUTUMAYO', descripcion: 'Procesos de comunicación y memoria en comunidades del Putumayo.' },
+  { nombre: 'ALAN CINE', territorio: 'CAQUETÁ', descripcion: 'Colectivo audiovisual de formación y exhibición itinerante.' },
+  { nombre: 'SIEMBRA CINE', territorio: 'NARIÑO', descripcion: 'Red de formación comunitaria en producción y difusión cultural.' },
+  { nombre: 'COLLECTIVO SUR', territorio: 'VALLE DEL GUAMUEZ', descripcion: 'Gestión cultural territorial y cine en espacios rurales.' },
+];
+
+const peliculas = [
   {
-    title: 'Canto de las Aguas',
+    titulo: 'Canto de las Aguas',
+    categoria: 'Documental',
     director: 'Comunidad Amazónica',
-    duration: '45 min',
-    category: 'Documental',
-    image: '/images/Recurso 2.webp',
+    duracion: '45 min',
+    imagen: '/images/Recurso 2.webp',
   },
   {
-    title: 'Memorias del Monte',
+    titulo: 'Memorias del Monte',
+    categoria: 'Ficción Comunitario',
     director: 'Colectivo Sur',
-    duration: '62 min',
-    category: 'Ficción Comunitario',
-    image: '/images/Recurso 3.webp',
+    duracion: '62 min',
+    imagen: '/images/Recurso 3.webp',
   },
   {
-    title: 'Semillas de Resistencia',
+    titulo: 'Semillas de Resistencia',
+    categoria: 'Cortometraje',
     director: 'Red de Cine',
-    duration: '30 min',
-    category: 'Cortometraje',
-    image: '/images/Recurso 4.webp',
+    duracion: '30 min',
+    imagen: '/images/Recurso 4.webp',
   },
   {
-    title: 'Voces de la Selva',
+    titulo: 'Voces de la Selva',
+    categoria: 'Documental',
     director: 'Asociación Comunitaria',
-    duration: '50 min',
-    category: 'Documental',
-    image: '/images/Recurso 5.webp',
+    duracion: '50 min',
+    imagen: '/images/Recurso 5.webp',
   },
   {
-    title: 'Ríos de Libertad',
+    titulo: 'Ríos de Libertad',
+    categoria: 'Relato Territorial',
     director: 'Minga Audiovisual',
-    duration: '40 min',
-    category: 'Relato Territorial',
-    image: '/images/Recurso 6.webp',
+    duracion: '40 min',
+    imagen: '/images/Recurso 6.webp',
   },
   {
-    title: 'La Maloca Sagrada',
+    titulo: 'La Maloca Sagrada',
+    categoria: 'Memoria Ancestral',
     director: 'Guardia Indígena',
-    duration: '55 min',
-    category: 'Memoria Ancestral',
-    image: '/images/Recurso 7.webp',
+    duracion: '55 min',
+    imagen: '/images/Recurso 7.webp',
   },
 ];
 ---
 
 <BaseLayout
   title="El Sur se Proyecta | Una Minga de Cine, Territorio y Comunidad"
-  description="El Sur se Proyecta es una Invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla."
+  description="El Sur se Proyecta es una invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla."
 >
-  <!-- Hero Section -->
-  <section id="hero" class="relative min-h-[88vh] flex flex-col justify-between overflow-hidden bg-sur-cream">
+
+  <!-- ==================== 1. HERO & TOP HEADER INTEGRADO ==================== -->
+  <section id="hero" class="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-sur-cream">
     
-    <!-- Background Image with Gradient Overlays -->
+    <!-- Hero Background Photo -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/Recurso 11.webp"
-        alt="Comunidad El Sur se Proyecta en la maloca"
+        alt="Comunidad El Sur se Proyecta"
         class="w-full h-full object-cover object-center"
         onerror="this.onerror=null; this.src='/images/Recurso 9.webp';"
       />
-      <!-- Top Soft Cream Gradient Overlay for Seamless Header Blend -->
-      <div class="absolute inset-0 bg-gradient-to-b from-sur-cream via-sur-cream/70 to-transparent h-72"></div>
-      <!-- Light Warm Overlay -->
-      <div class="absolute inset-0 bg-sur-cream/20"></div>
+      <!-- Top Cream Mask Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-sur-cream via-sur-cream/65 to-transparent h-72"></div>
+      <div class="absolute inset-0 bg-sur-cream/25"></div>
     </div>
 
-    <!-- Main Hero Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-28 relative z-10 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-4">
+    <!-- Embedded Header Navigation -->
+    <header class="relative z-20 w-full pt-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        <!-- Left Column: Official Logo SVG Image -->
+        <!-- Empty left space or small logo icon -->
+        <a href="/" class="flex items-center gap-2">
+          <img src="/images/logo.svg" alt="El Sur se Proyecta" class="h-10 sm:h-12 w-auto object-contain" />
+        </a>
+
+        <!-- Navigation Links in Open Sans Bold -->
+        <nav class="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="font-sans font-bold text-sm text-sur-olive hover:text-sur-olive-dark transition-colors py-1 hover:underline underline-offset-4 decoration-2"
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        <!-- CTA Pill Button -->
+        <div class="hidden md:flex">
+          <Button href="#catalogo" variant="sur-pill" size="md">
+            Ver Catálogo
+          </Button>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          id="hero-menu-toggle"
+          type="button"
+          class="md:hidden p-2 rounded-xl text-sur-olive hover:bg-sur-olive/10 focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="hero-mobile-menu" class="hidden md:hidden bg-sur-cream/95 backdrop-blur-md px-6 py-4 mt-2 border-b border-sur-olive/10 space-y-3 shadow-lg">
+        {navLinks.map((link) => (
+          <a href={link.href} class="block font-sans font-bold text-base text-sur-olive">
+            {link.name}
+          </a>
+        ))}
+        <Button href="#catalogo" variant="sur-pill" size="md" className="w-full justify-center">
+          Ver Catálogo
+        </Button>
+      </div>
+    </header>
+
+    <!-- Main Hero Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left: Official Big Logo SVG -->
         <div class="lg:col-span-5 flex justify-start items-center">
           <img
             src="/images/logo.svg"
-            alt="El Sur se Proyecta"
-            class="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-auto object-contain filter drop-shadow-md select-none transition-transform duration-300 hover:scale-[1.02]"
+            alt="El Sur se Proyecta Logo"
+            class="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-auto object-contain filter drop-shadow-md select-none"
           />
         </div>
 
-        <!-- Right Column: Headline, Description & CTA -->
+        <!-- Right: Headline & Description -->
         <div class="lg:col-span-7 space-y-6 max-w-2xl">
           <h1 class="font-sur-brand text-4xl sm:text-5xl lg:text-6xl text-sur-olive uppercase leading-[0.95] tracking-wide">
             UNA MINGA DE CINE,<br class="hidden sm:inline" />
             TERRITORIO Y COMUNIDAD
           </h1>
 
-          <!-- Subtitle / Body Text in Open Sans Regular -->
           <p class="font-sans font-normal text-base sm:text-lg text-sur-olive/90 leading-relaxed max-w-xl">
             El Sur se Proyecta es una Invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla.
           </p>
 
-          <!-- Button in Open Sans Bold -->
           <div class="pt-2">
             <Button href="#catalogo" variant="sur-pill" size="lg" className="px-8 py-3.5 text-base font-sans font-bold">
               Explorar Catálogo
@@ -105,11 +172,11 @@ const filmCatalog = [
       </div>
     </div>
 
-    <!-- Official Decorative Organic River Waves SVG (Recurso 19.svg / Recurso 12.svg) -->
+    <!-- Bottom River Waves Graphic (Recurso 19.svg) -->
     <div class="relative z-20 w-full leading-none -mt-16 sm:-mt-24 pointer-events-none">
       <img
         src="/images/Recurso 19.svg"
-        alt="Olas de río El Sur se Proyecta"
+        alt="Olas de río"
         class="w-full h-auto block object-cover"
         onerror="this.onerror=null; this.src='/images/Recurso 12.svg';"
       />
@@ -117,81 +184,166 @@ const filmCatalog = [
 
   </section>
 
-  <!-- Nosotros / Minga Section -->
-  <section id="nosotros" class="py-20 bg-sur-cream border-t border-sur-olive/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center space-y-4">
-        <h2 class="font-sur-brand text-4xl sm:text-5xl text-sur-olive uppercase tracking-wide">
-          Cine Itinerante y Comunitario
-        </h2>
-        <p class="font-sans font-normal text-base sm:text-lg text-sur-olive/80 leading-relaxed">
-          Impulsamos proyecciones cinematográficas participativas en espacios comunitarios, centros culturales y territorios rurales. El cine como punto de encuentro, diálogo e intercambio de saberes.
-        </p>
-      </div>
-
-      <!-- Metric Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
-        <div class="bg-sur-cream-light p-8 rounded-3xl border border-sur-olive/15 text-center space-y-2 shadow-sm hover:border-sur-olive/30 transition-all">
-          <span class="font-sur-brand text-6xl text-sur-olive">+25</span>
-          <h3 class="font-sans font-bold text-lg text-sur-olive-dark">Territorios Recorridos</h3>
-          <p class="font-sans font-normal text-xs text-sur-olive/70">Comunidades rurales e indígenas conectadas.</p>
+  <!-- ==================== 2. TERRITORIOS / MAPA SECTION (Vibrant Cyan #00A3DA) ==================== -->
+  <section id="sedes" class="py-20 bg-sur-cyan text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Map / Pins Graphic -->
+        <div class="lg:col-span-6 flex justify-center">
+          <img
+            src="/images/Recurso 20.svg"
+            alt="Mapa de Territorios El Sur se Proyecta"
+            class="w-full max-w-[480px] h-auto object-contain filter drop-shadow-lg"
+            onerror="this.onerror=null; this.src='/images/Recurso 17.svg';"
+          />
         </div>
 
-        <div class="bg-sur-cream-light p-8 rounded-3xl border border-sur-olive/15 text-center space-y-2 shadow-sm hover:border-sur-olive/30 transition-all">
-          <span class="font-sur-brand text-6xl text-sur-olive">+40</span>
-          <h3 class="font-sans font-bold text-lg text-sur-olive-dark">Proyecciones Realizadas</h3>
-          <p class="font-sans font-normal text-xs text-sur-olive/70">Funciones al aire libre y en malocas comunitarias.</p>
+        <!-- Right: Content -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/20 text-white px-3.5 py-1 rounded-full inline-block">
+            DONDE ESTAMOS
+          </span>
+
+          <h2 class="font-sur-brand text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wide leading-[0.95] text-white">
+            EL SUR YA TIENE LAS HISTORIAS.<br />
+            AHORA LAS PROYECTAMOS JUNTAS.
+          </h2>
+
+          <p class="font-sans font-normal text-white/95 text-base sm:text-lg leading-relaxed">
+            El Sur se Proyecta es una iniciativa de itinerancia de cine comunitario que conecta territorios a través del audiovisual, promoviendo el encuentro, la reflexión y la memoria en comunidades rurales e indígenas.
+          </p>
+
+          <div class="pt-2">
+            <Button href="#sedes" variant="primary" size="lg" className="bg-sur-green hover:bg-sur-green-hover text-white font-sans font-bold border-0">
+              Conoce las Sedes
+            </Button>
+          </div>
         </div>
 
-        <div class="bg-sur-cream-light p-8 rounded-3xl border border-sur-olive/15 text-center space-y-2 shadow-sm hover:border-sur-olive/30 transition-all">
-          <span class="font-sur-brand text-6xl text-sur-olive">100%</span>
-          <h3 class="font-sans font-bold text-lg text-sur-olive-dark">Cine Independiente</h3>
-          <p class="font-sans font-normal text-xs text-sur-olive/70">Cultura, memoria e identidad territorial.</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Catálogo Preview Section -->
-  <section id="catalogo" class="py-20 bg-sur-cream-light border-t border-sur-olive/10">
+  <!-- ==================== 3. MANIFIESTO SECTION (Vibrant Red #E3322B) ==================== -->
+  <section id="nosotros" class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
+    
+    <!-- Left: Photo -->
+    <div class="min-h-[400px] lg:min-h-[550px] relative">
+      <img
+        src="/images/Recurso 8.webp"
+        alt="Cine en territorio"
+        class="w-full h-full object-cover"
+        onerror="this.onerror=null; this.src='/images/Recurso 9.webp';"
+      />
+    </div>
+
+    <!-- Right: Red Manifiesto Block -->
+    <div class="bg-[#E3322B] text-white p-10 sm:p-14 lg:p-16 flex flex-col justify-center space-y-6">
+      <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/20 px-3.5 py-1 rounded-full self-start">
+        UNA RED EN MOVIMIENTO
+      </span>
+
+      <p class="font-sans font-normal text-white text-base sm:text-lg leading-relaxed">
+        El cine en los territorios no es solo entretenimiento, es una herramienta de resistencia, memoria y tejido social. Creemos en un cine que no solo se contempla, sino que se camina, se platica y se sueña colectivamente.
+      </p>
+
+      <p class="font-sans font-normal text-white/90 text-base sm:text-lg leading-relaxed">
+        Esta minga busca descentralizar el acceso al cine, fortaleciendo los procesos locales de comunicación comunitaria y creando pantallas donde nuestras propias historias se reconozcan.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ==================== 4. GALERÍA FOTOGRÁFICA DE LA MINGA ==================== -->
+  <section class="py-2 bg-sur-cream">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+      <div class="aspect-square overflow-hidden">
+        <img src="/images/Recurso 2.webp" alt="Minga Audiovisual 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="/images/Recurso 9.webp" alt="Proyección Nocturna 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="/images/Recurso 3.webp" alt="Taller Comunitario 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="/images/Recurso 4.webp" alt="Comunidad 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="/images/Recurso 5.webp" alt="Naturaleza 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="/images/Recurso 6.webp" alt="Cine al aire libre 6" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. NOCHES DE CINE EN EL TERRITORIO (Olive Green Block) ==================== -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 bg-sur-cream">
+    
+    <!-- Left: Olive Green Info Block -->
+    <div class="bg-sur-olive text-sur-cream p-10 sm:p-14 lg:p-16 flex flex-col justify-center space-y-6">
+      <span class="font-sans font-bold text-xs uppercase tracking-widest bg-white/15 px-3.5 py-1 rounded-full self-start text-sur-cream">
+        NOCHES DE CINE EN EL TERRITORIO
+      </span>
+
+      <p class="font-sans font-normal text-sur-cream/95 text-base sm:text-lg leading-relaxed">
+        Organizamos proyecciones bajo las estrellas, en canchas comunitarias, quioscos y plazas principales. Cada función es un espacio festivo donde niños, jóvenes y mayores comparten historias al calor de la comunidad.
+      </p>
+
+      <p class="font-sans font-normal text-sur-cream/90 text-base sm:text-lg leading-relaxed">
+        Acompañamos cada película con conversatorios y foros donde la palabra circula libremente.
+      </p>
+    </div>
+
+    <!-- Right: Night Projection Photo -->
+    <div class="min-h-[400px] lg:min-h-[500px] relative">
+      <img
+        src="/images/Recurso 9.webp"
+        alt="Proyección de cine al aire libre"
+        class="w-full h-full object-cover"
+        onerror="this.onerror=null; this.src='/images/Recurso 8.webp';"
+      />
+    </div>
+
+  </section>
+
+  <!-- ==================== 6. DECORATIVE TRIBAL SEPARATOR ==================== -->
+  <div class="bg-sur-cream py-6 flex justify-center items-center gap-4 overflow-hidden select-none opacity-90">
+    <img src="/images/Recurso 13.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 14.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 15.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 16.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
+    <img src="/images/Recurso 17.svg" alt="Simbolo" class="h-8 w-auto object-contain" onerror="this.style.display='none';" />
+  </div>
+
+  <!-- ==================== 7. COLABORACIÓN / ALIADOS SECTION ==================== -->
+  <section class="py-20 bg-sur-cream border-t border-sur-olive/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-        <div>
-          <span class="font-sans font-bold text-xs uppercase tracking-widest text-sur-olive">Muestra Audiovisual</span>
-          <h2 class="font-sur-brand text-4xl sm:text-5xl text-sur-olive uppercase tracking-wide">
-            Catálogo Disponible
-          </h2>
-        </div>
-        <Button href="#catalogo" variant="sur-pill" size="md" className="font-sans font-bold">
-          Ver Catálogo Completo
-        </Button>
+      <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
+        <span class="font-sans font-bold text-xs uppercase tracking-widest text-sur-olive">NUESTROS ALIADOS</span>
+        <h2 class="font-sur-brand text-4xl sm:text-5xl text-sur-olive uppercase tracking-wide">
+          EL SUR SE PROYECTA SE CONSTRUYE EN COLABORACIÓN
+        </h2>
+        <p class="font-sans font-normal text-sur-olive/80 text-base sm:text-lg leading-relaxed">
+          Esta minga es posible gracias al trabajo articulado con colectivos locales, organizaciones comunitarias, instituciones culturales y gestores territoriales.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filmCatalog.map((film) => (
-          <div class="bg-sur-cream rounded-3xl overflow-hidden border border-sur-olive/15 shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-            <div>
-              <div class="aspect-[16/10] w-full overflow-hidden relative bg-slate-200">
-                <img
-                  src={film.image}
-                  alt={film.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onerror="this.onerror=null; this.src='/images/Recurso 8.webp';"
-                />
-                <span class="font-sans font-bold absolute top-3 left-3 bg-sur-green text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                  {film.category}
-                </span>
-              </div>
-              <div class="p-6 space-y-2">
-                <h3 class="font-sur-brand text-3xl text-sur-olive uppercase tracking-wide">{film.title}</h3>
-                <p class="font-sans font-bold text-xs text-sur-olive/70">Director: {film.director} • {film.duration}</p>
-              </div>
-            </div>
-            <div class="px-6 pb-6 pt-2">
-              <Button href="#catalogo" variant="secondary" size="sm" className="w-full justify-center font-sans font-bold">
-                Solicitar Función
-              </Button>
+      <!-- 4 Cards Grid in Olive Green -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {aliados.map((aliado) => (
+          <div class="bg-sur-olive text-sur-cream p-7 rounded-3xl space-y-3 flex flex-col justify-between shadow-md hover:-translate-y-1 transition-all">
+            <div class="space-y-2">
+              <h3 class="font-sur-brand text-3xl uppercase tracking-wide text-white">{aliado.nombre}</h3>
+              <span class="font-sans font-bold text-[11px] bg-sur-green text-white px-3 py-0.5 rounded-full inline-block">
+                {aliado.territorio}
+              </span>
+              <p class="font-sans font-normal text-xs text-sur-cream/80 leading-relaxed pt-2">
+                {aliado.descripcion}
+              </p>
             </div>
           </div>
         ))}
@@ -200,20 +352,241 @@ const filmCatalog = [
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section id="sedes" class="py-20 bg-sur-olive text-sur-cream relative overflow-hidden">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-      <h2 class="font-sur-brand text-5xl sm:text-6xl uppercase tracking-wide">
-        Lleva el cine a tu territorio
-      </h2>
-      <p class="font-sans font-normal text-sur-cream/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-        ¿Te gustaría ser sede de proyecciones o conectar a tu comunidad? Organiza una función con el equipo de El Sur se Proyecta.
-      </p>
-      <div class="pt-2 flex justify-center">
-        <Button href="#contact" variant="secondary" size="lg" className="bg-sur-cream text-sur-olive hover:bg-white border-0 font-sans font-bold">
-          Sumar mi Comunidad
+  <!-- ==================== 8. CATÁLOGO AUDIOVISUAL SECTION ==================== -->
+  <section id="catalogo" class="py-20 bg-sur-cream-light border-t border-sur-olive/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <span class="font-sans font-bold text-xs uppercase tracking-widest text-sur-olive">MUESTRA AUDIOVISUAL</span>
+        <h2 class="font-sur-brand text-4xl sm:text-5xl text-sur-olive uppercase tracking-wide">
+          CATÁLOGO DE PELÍCULAS
+        </h2>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <button class="font-sans font-bold text-xs bg-sur-green text-white px-5 py-2 rounded-full">TODAS</button>
+        <button class="font-sans font-bold text-xs bg-sur-cream border border-sur-olive/20 text-sur-olive hover:bg-sur-olive hover:text-white px-5 py-2 rounded-full transition-colors">DOCUMENTAL</button>
+        <button class="font-sans font-bold text-xs bg-sur-cream border border-sur-olive/20 text-sur-olive hover:bg-sur-olive hover:text-white px-5 py-2 rounded-full transition-colors">FICCIÓN</button>
+        <button class="font-sans font-bold text-xs bg-sur-cream border border-sur-olive/20 text-sur-olive hover:bg-sur-olive hover:text-white px-5 py-2 rounded-full transition-colors">CORTOMETRAJE</button>
+      </div>
+
+      <!-- 6 Film Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {peliculas.map((film) => (
+          <div class="bg-sur-cream rounded-3xl overflow-hidden border border-sur-olive/15 shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <div class="aspect-[16/10] w-full overflow-hidden relative bg-slate-200">
+                <img
+                  src={film.imagen}
+                  alt={film.titulo}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onerror="this.onerror=null; this.src='/images/Recurso 8.webp';"
+                />
+                <span class="font-sans font-bold absolute top-3 left-3 bg-sur-green text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                  {film.categoria}
+                </span>
+              </div>
+              <div class="p-6 space-y-2">
+                <h3 class="font-sur-brand text-3xl text-sur-olive uppercase tracking-wide">{film.titulo}</h3>
+                <p class="font-sans font-bold text-xs text-sur-olive/70">Director: {film.director} • {film.duracion}</p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-2">
+              <Button href="#catalogo" variant="sur-pill" size="sm" className="w-full justify-center font-sans font-bold">
+                Ver Ficha de Película
+              </Button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="#catalogo" variant="sur-pill" size="lg" className="px-8 py-3.5 font-sans font-bold">
+          Ver Catálogo Completo
         </Button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 9. RECURSOS Y HERRAMIENTAS SECTION ==================== -->
+  <section id="recursos" class="py-20 bg-sur-cream border-t border-sur-olive/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center space-y-3 mb-14">
+        <span class="font-sans font-bold text-xs uppercase tracking-widest text-sur-olive">RECURSOS Y DESCARGAS</span>
+        <h2 class="font-sur-brand text-4xl sm:text-5xl text-sur-olive uppercase tracking-wide">
+          MATERIALES PARA LA MINGA
+        </h2>
+        <p class="font-sans font-normal text-sur-olive/80 text-base sm:text-lg leading-relaxed">
+          Descarga nuestras guías metodológicas, kits de difusión y materiales para organizar tu propia función de cine comunitario.
+        </p>
+      </div>
+
+      <!-- 3 Resource Cards in Orange / Olive -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="font-sur-brand text-3xl uppercase tracking-wide">Guía de Proyección</h3>
+            <p class="font-sans font-normal text-xs text-white/90 leading-relaxed">
+              Paso a paso para montar funciones de cine en comunidades rurales y espacios abiertos.
+            </p>
+          </div>
+          <Button href="#" variant="secondary" size="sm" className="bg-white text-[#E66700] hover:bg-white/90 border-0 w-full justify-center font-sans font-bold">
+            Descargar PDF
+          </Button>
+        </div>
+
+        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="font-sur-brand text-3xl uppercase tracking-wide">Manual de Mediación</h3>
+            <p class="font-sans font-normal text-xs text-white/90 leading-relaxed">
+              Herramientas para facilitar cineforos y conversaciones comunitarias significativas.
+            </p>
+          </div>
+          <Button href="#" variant="secondary" size="sm" className="bg-white text-[#E66700] hover:bg-white/90 border-0 w-full justify-center font-sans font-bold">
+            Descargar PDF
+          </Button>
+        </div>
+
+        <div class="bg-[#E66700] text-white p-8 rounded-3xl space-y-4 shadow-md flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="font-sur-brand text-3xl uppercase tracking-wide">Kit de Difusión</h3>
+            <p class="font-sans font-normal text-xs text-white/90 leading-relaxed">
+              Afiches editables, pancartas y piezas para redes sociales de tus funciones.
+            </p>
+          </div>
+          <Button href="#" variant="secondary" size="sm" className="bg-white text-[#E66700] hover:bg-white/90 border-0 w-full justify-center font-sans font-bold">
+            Descargar KIT (.zip)
+          </Button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 10. REPORTE E IMPACTO SECTION ==================== -->
+  <section id="reporte" class="py-20 bg-sur-cream-light border-t border-sur-olive/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-7 bg-sur-cream p-8 sm:p-10 rounded-3xl border border-sur-olive/15 space-y-4 shadow-sm">
+          <span class="font-sans font-bold text-xs uppercase tracking-widest text-sur-olive">IMPACTO TERRITORIAL</span>
+          <h2 class="font-sur-brand text-4xl text-sur-olive uppercase tracking-wide">
+            REPORTE DE LA MINGA
+          </h2>
+          <p class="font-sans font-normal text-sur-olive/80 text-sm leading-relaxed">
+            Consulta los resultados, testimonios y aprendizajes colectivos acumulados a lo largo de las itinerancias en los territorios del Sur.
+          </p>
+          <div class="pt-2">
+            <Button href="#" variant="sur-pill" size="md" className="font-sans font-bold">
+              Descargar Reporte Completo
+            </Button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-[#E66700] text-white p-6 rounded-2xl shadow-sm">
+            <span class="font-sur-brand text-4xl">100% LIBRE Y GRATUITO</span>
+            <p class="font-sans font-normal text-xs text-white/90">Acceso abierto para todas las comunidades.</p>
+          </div>
+          <div class="bg-[#E66700] text-white p-6 rounded-2xl shadow-sm">
+            <span class="font-sur-brand text-4xl">PROYECCIONES ITINERANTES</span>
+            <p class="font-sans font-normal text-xs text-white/90">El cine en movimiento por el territorio.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- ==================== 11. BOTTOM BANNER / LOGO BANNER (Vibrant Cyan) ==================== -->
+  <section class="bg-sur-cyan text-white py-16 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center space-y-4">
+      <img
+        src="/images/Recurso 20.svg"
+        alt="El Sur se Proyecta Logo Ilustración"
+        class="h-28 w-auto object-contain filter drop-shadow-md"
+        onerror="this.onerror=null; this.src='/images/logo.svg';"
+      />
+    </div>
+  </section>
+
+  <!-- ==================== 12. FOOTER INTEGRADO AL FINAL ==================== -->
+  <footer class="bg-sur-cream border-t border-sur-olive/20 pt-16 pb-12 text-sur-olive text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-sur-olive/20">
+        
+        <!-- Brand column -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="/" class="flex items-center gap-3">
+            <img src="/images/logo.svg" alt="El Sur se Proyecta" class="h-12 w-auto object-contain" />
+          </a>
+          <p class="font-sans font-normal text-sur-olive/80 max-w-sm leading-relaxed text-sm">
+            Una invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla.
+          </p>
+        </div>
+
+        <!-- Footer Columns -->
+        <div class="space-y-3">
+          <h3 class="font-sans font-bold text-sm text-sur-olive-dark tracking-wider uppercase">Navegación</h3>
+          <ul class="space-y-2 font-sans font-medium text-xs">
+            <li><a href="#hero" class="hover:underline">Inicio</a></li>
+            <li><a href="#sedes" class="hover:underline">Territorios y Sedes</a></li>
+            <li><a href="#nosotros" class="hover:underline">Manifiesto</a></li>
+            <li><a href="#catalogo" class="hover:underline">Catálogo</a></li>
+            <li><a href="#recursos" class="hover:underline">Recursos</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="font-sans font-bold text-sm text-sur-olive-dark tracking-wider uppercase">Comunidad</h3>
+          <ul class="space-y-2 font-sans font-medium text-xs">
+            <li><a href="#" class="hover:underline">Red de CineComunitario</a></li>
+            <li><a href="#" class="hover:underline">Convocatorias</a></li>
+            <li><a href="#" class="hover:underline">Talleres</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="font-sans font-bold text-sm text-sur-olive-dark tracking-wider uppercase">Contacto</h3>
+          <ul class="space-y-2 font-sans font-medium text-xs">
+            <li><a href="#" class="hover:underline">Escríbenos</a></li>
+            <li><a href="#" class="hover:underline">Prensa</a></li>
+            <li><a href="#" class="hover:underline">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-sur-olive/70 font-sans font-medium">
+        <p>© 2026 El Sur se Proyecta. Todos los derechos reservados. Desarrollado por ALVAROMEJIA.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:underline">Política de Privacidad</a>
+          <a href="#" class="hover:underline">Términos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </BaseLayout>
+
+<script>
+  // Script para el menú móvil del hero integrado
+  const toggleBtn = document.getElementById('hero-menu-toggle');
+  const mobileMenu = document.getElementById('hero-mobile-menu');
+
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+</script>

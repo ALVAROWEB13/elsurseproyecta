@@ -1,7 +1,5 @@
 ---
 import type { SEOProps } from '@types';
-import Header from '@components/common/Header.astro';
-import Footer from '@components/common/Footer.astro';
 import '@styles/global.css';
 
 interface Props extends SEOProps {
@@ -11,7 +9,7 @@ interface Props extends SEOProps {
 const {
   title = 'El Sur se Proyecta | Una Minga de Cine, Territorio y Comunidad',
   description = 'El Sur se Proyecta es una invitación a que el cine viaje de territorio en territorio, de comunidad en comunidad, de pantalla en pantalla.',
-  image = '/images/hero-bg.jpg',
+  image = '/images/Recurso 11.webp',
   canonicalURL = Astro.url,
   ogType = 'website',
   noindex = false,
@@ -60,12 +58,8 @@ const socialImageURL = new URL(image, Astro.site);
   </head>
 
   <body class="bg-sur-cream text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-sur-olive/20 selection:text-sur-olive-dark">
-    <Header />
-    
     <main class="flex-grow">
       <slot />
     </main>
-
-    <Footer />
   </body>
 </html>
